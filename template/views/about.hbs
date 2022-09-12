@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{>headerlink}}
+    <link rel="shortcut icon" href="./images/logo.png" type="image/png">
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>DaniyWeatherExpress</title>
+  </head>
+  <body>
+    {{>navbar}}
+
+    <!-- main-Home_page -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-10 col-12 mx-auto">
+            <div class="row">
+                <!-- main_page_right -->
+                <div class="col-md-6 col-12 main_page_right align-items-center">
+                    <figure>
+                        <img src="./images/about.png" alt="daniyal pic" class="img-fluid" title="Daniyal Shiekh">
+                    </figure>
+                </div>
+                <!-- main_page_left -->
+                <div class="col-md-6 col-12 main_page_left">
+                    <p>Welcome to the weather app</p>
+                    <h1>i am a <span>MERN Stack Develepor</span>, freelancer & CSIT student</h1>
+                    <a href="#"><button>about me</button></a>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer code -->
+    {{>footer}}
+  </body>
+</html>

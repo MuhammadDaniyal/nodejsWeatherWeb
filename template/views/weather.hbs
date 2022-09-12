@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{>headerlink}}
+    <link rel="shortcut icon" href="./images/logo.png" type="image/png">
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>DaniyWeatherExpress</title>
+</head>
+
+<body>
+    {{>navbar}}
+
+    <!-- main-Home_page -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div class="temp_content">
+                    <form class="temp_form">
+                        <input type="text" id="cityName" placeholder="Enter City Name" autocomplete="off">
+                        <input type="submit" value="Search" id="submitBtn">
+                    </form>
+                    <div class="temp_info">
+                        <div class="top_layer">
+                            <p id="day">Tuesday</p>
+                            <p><span id="todayDate">13</span> <span id="todayMonth">OCT</span></p>
+                        </div>
+                        <div class="main_layer">
+                            <p id="output_city_Name">Get Output Here</p>
+                            <div class="middle_layer data_hide">
+                                <p id="temp"><span id="temp_real_val">0</span><sup>o</sup>C</p>
+                                <p id="tempStatus"><i class="fa fa-cloud" aria-hidden="true"></i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer code -->
+    {{>footer}}
+
+    <script src="./js/main.js"></script>
+    <script>
+        const myDay = () => {
+            const currentDate = new Date();
+            const weekdays = new Array(7);
+            weekdays[0] = "Sunday";
+            weekdays[1] = "Monday";
+            weekdays[2] = "Tuesday";
+            weekdays[3] = "Wednesday";
+            weekdays[4] = "Thursday";
+            weekdays[5] = "Friday";
+            weekdays[6] = "Saturday";
+            const day = document.getElementById("day");
+            let weekday = weekdays[currentDate.getDay()];
+            day.innerText = weekday;
+        }
+        myDay()
+
+        const myDateMonth = () => {
+            const currentDate = new Date();
+            const month = [
+                "JAN",
+                "FEB",
+                "MAR",
+                "APR",
+                "MAY",
+                "JUNE",
+                "JULY",
+                "AUG",
+                "SEPT",
+                "OCT",
+                "NOV",
+                "DEC"]
+            const monthName = month[currentDate.getMonth()];
+            const presentDate = currentDate.getDate();
+            document.getElementById("todayMonth").innerText = monthName;
+            document.getElementById("todayDate").innerText = presentDate;
+        }
+        myDateMonth()
+    </script>
+</body>
+
+</html>
